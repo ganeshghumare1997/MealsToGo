@@ -13,6 +13,7 @@ import { RestarantsScreen } from "./src/features/restaurants/screens/restaurants
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Ionicons from '@expo/vector-icons/Ionicons';
+import { RestaurantsContextProvider } from "./src/services/restaurants/restaurants.context";
 
 const Tab = createBottomTabNavigator();
 
@@ -59,6 +60,7 @@ export default function App() {
   return (
     <>
       <ThemeProvider theme={theme}>
+      <RestaurantsContextProvider value={[1,2,3]}>
         <NavigationContainer>
           <Tab.Navigator
             screenOptions={({ route }) => ({
@@ -87,6 +89,7 @@ export default function App() {
             <Tab.Screen name="Maps" component={MapsScreen} />
           </Tab.Navigator>
         </NavigationContainer>
+        </RestaurantsContextProvider>
       </ThemeProvider>
       <ExpoStatusBar style="auto" />
     </>

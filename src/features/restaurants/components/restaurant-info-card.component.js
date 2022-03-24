@@ -6,9 +6,8 @@ import { Spacer } from "../../../components/spacer/spacer.component";
 import { Text } from "../../../components/typography/text.component";
 import { Icon, Address, RestaurantCard, RestaurantCardCover, Info, Rating, Section, SectionEnd, Open } from "./restaurant-info-card.styles";
 
-export const RestaurantCardInfo = ({ restaurant = {} }) => {
-  const {
-    name = "Some Restaurant",
+export const RestaurantCardInfo = ({ restaurant : {
+  name = "Some Restaurant",
     icon = "https://maps.gstatic.com/mapfiles/place_api/icons/v1/png_71/lodging-71.png",
     photos = [
       "https://media.istockphoto.com/photos/modern-restaurant-interior-design-picture-id1211547141?k=20&m=1211547141&s=612x612&w=0&h=KiZX3NBZVCK4MlSh4BJ8hZNSJcTIMbNSSV2yusw2NmM=",
@@ -17,7 +16,7 @@ export const RestaurantCardInfo = ({ restaurant = {} }) => {
     isOpenNow = true,
     rating = 4,
     isClosedTemporarily = true,
-  } = restaurant;
+} }) => {
 
   const ratingArray = Array.from(new Array(Math.floor(rating)));
 
